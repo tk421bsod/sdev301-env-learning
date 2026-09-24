@@ -36,6 +36,7 @@ int main()
         }
         if (bn::keypad::a_pressed())
         {
+            dy = 0;
             dy -= jump_strength;
         }
 
