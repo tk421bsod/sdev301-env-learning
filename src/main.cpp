@@ -20,16 +20,18 @@ int main()
     bn::fixed dy = 0;
     bn::fixed gravity = .03;
 
-    bn::fixed jump_strength = 1.5;
+    bn::fixed jump_strength = 1.2;
 
     while (true)
     {
         if (bn::keypad::left_held())
         {
+            dot.set_horizontal_flip(false);
             dot.set_x(dot.x() - speed);
         }
         if (bn::keypad::right_held())
         {
+            dot.set_horizontal_flip(true);
             dot.set_x(dot.x() + speed);
         }
         if (bn::keypad::a_pressed())
