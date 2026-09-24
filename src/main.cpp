@@ -7,7 +7,8 @@
 
 #define FLOOR (80 - 8)
 
-int main() {
+int main()
+{
     bn::core::init();
 
     bn::backdrop::set_color(bn::color(15, 0, 0));
@@ -19,16 +20,20 @@ int main() {
     bn::fixed dy = 0;
     bn::fixed gravity = .03;
 
-    bn::fixed jump_strength = 1.3;
+    bn::fixed jump_strength = 1.5;
 
-    while(true) {
-        if(bn::keypad::left_held()) {
+    while (true)
+    {
+        if (bn::keypad::left_held())
+        {
             dot.set_x(dot.x() - speed);
         }
-        if(bn::keypad::right_held()) {
+        if (bn::keypad::right_held())
+        {
             dot.set_x(dot.x() + speed);
         }
-        if(bn::keypad::a_pressed()) {
+        if (bn::keypad::a_pressed())
+        {
             dy -= jump_strength;
         }
 
@@ -36,7 +41,8 @@ int main() {
 
         dot.set_y(dot.y() + dy);
 
-        if(dot.y() > FLOOR) {
+        if (dot.y() > FLOOR)
+        {
             dot.set_y(FLOOR);
             dy = 0;
         }
